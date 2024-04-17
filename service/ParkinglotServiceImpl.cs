@@ -64,5 +64,26 @@ namespace parking_lot.service
                 Console.WriteLine("All space is empty");
             }
         }
+        
+        public void EmptySpaceReport()
+        {
+            List<int> spaceEmpty = new List<int>();
+            foreach (ParkingSpace parkingSpace in _parkingLot)
+            {
+                if (parkingSpace.Status == SpaceStatus.Empty)
+                {
+                    spaceEmpty.Add(parkingSpace.SpaceNumber);
+                }
+            }
+
+            if (spaceEmpty.Count > 0)
+            {
+                Console.WriteLine($"Space: {string.Join(", ", spaceEmpty)}");
+            }
+            else
+            {
+                Console.WriteLine("There is no space in parking lot");
+            }
+        }
     }
 }
