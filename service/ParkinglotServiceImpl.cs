@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using parking_lot.constant;
 using parking_lot.model;
 
@@ -106,5 +107,31 @@ namespace parking_lot.service
             }
             Console.WriteLine(typeVehicle == "Motor" ? $"{countMotorcycle}" : $"{countCar}");
         }
+        
+        public void LicencePlateTypeReport(string typePlate)
+        {
+            List<string> ood = new List<string>();
+            List<string> even = new List<string>();
+            foreach (ParkingSpace parkingSpace in _parkingLot)
+            {
+                if (parkingSpace.Status == SpaceStatus.Filled)
+                {
+                    string numberLicence = Regex.Match(parkingSpace.Vehicle.LicencePlate, @"-(\d+)-").Groups[1].Value;
+                    if (numberLicence[^1] % 2 == 0)
+                    {
+                        even.Add(parkingSpace.Vehicle.LicencePlate);
+                    }
+                    else
+                    {
+                        ood.Add(parkingSpace.Vehicle.LicencePlate);
+                    }
+                }
+            }
+
+            Console.WriteLine(typePlate.Equals("ood")
+                ? $"{string.Join(", ", ood)}"
+                : $"{string.Join(", ", even)}");
+        }
+
     }
 }
