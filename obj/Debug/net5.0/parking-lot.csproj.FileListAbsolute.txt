@@ -1,0 +1,15 @@
+C:\C#\parking-lot\bin\Debug\net5.0\parking-lot.exe
+C:\C#\parking-lot\bin\Debug\net5.0\parking-lot.deps.json
+C:\C#\parking-lot\bin\Debug\net5.0\parking-lot.runtimeconfig.json
+C:\C#\parking-lot\bin\Debug\net5.0\parking-lot.runtimeconfig.dev.json
+C:\C#\parking-lot\bin\Debug\net5.0\parking-lot.dll
+C:\C#\parking-lot\bin\Debug\net5.0\parking-lot.pdb
+C:\C#\parking-lot\obj\Debug\net5.0\parking-lot.GeneratedMSBuildEditorConfig.editorconfig
+C:\C#\parking-lot\obj\Debug\net5.0\parking-lot.AssemblyInfoInputs.cache
+C:\C#\parking-lot\obj\Debug\net5.0\parking-lot.AssemblyInfo.cs
+C:\C#\parking-lot\obj\Debug\net5.0\parking-lot.csproj.CoreCompileInputs.cache
+C:\C#\parking-lot\obj\Debug\net5.0\parking-lot.dll
+C:\C#\parking-lot\obj\Debug\net5.0\refint\parking-lot.dll
+C:\C#\parking-lot\obj\Debug\net5.0\parking-lot.pdb
+C:\C#\parking-lot\obj\Debug\net5.0\parking-lot.genruntimeconfig.cache
+C:\C#\parking-lot\obj\Debug\net5.0\ref\parking-lot.dll
