@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using parking_lot.constant;
 using parking_lot.model;
 
@@ -32,6 +33,14 @@ namespace parking_lot.service
                 }
             }
             Console.WriteLine("Sorry, parking lot is full");
+        }
+        
+        public void LeaveVehicle(int space)
+        {
+            ParkingSpace parkingSpace = _parkingLot.ElementAt(space - 1);
+            parkingSpace.Status = SpaceStatus.Empty;
+            parkingSpace.Vehicle = null;
+            Console.WriteLine($"Slot number {space} is free");
         }
     }
 }
