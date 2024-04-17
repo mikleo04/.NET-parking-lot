@@ -132,6 +132,34 @@ namespace parking_lot.service
                 ? $"{string.Join(", ", ood)}"
                 : $"{string.Join(", ", even)}");
         }
+        
+        public void ColorTypeReport(string color, string type)
+        {
+            List<string> licencePlate = new List<string>();
+            List<int> space = new List<int>();
+            foreach (ParkingSpace parkingSpace in _parkingLot)
+            {
+                if (parkingSpace.Status == SpaceStatus.Filled)
+                {
+                    if (parkingSpace.Vehicle.Color == color)
+                    {
+                        licencePlate.Add(parkingSpace.Vehicle.LicencePlate);
+                        space.Add(parkingSpace.SpaceNumber);
+                    }
+                }
+            }
+
+            if (licencePlate.Count == 0 && space.Count == 0)
+            {
+                Console.WriteLine($"There is no vehicle with the color {color}");
+            }
+            else
+            {
+                Console.WriteLine(type == "licencePlate"
+                    ? $"{string.Join(", ", licencePlate)}"
+                    : $"{string.Join(", ", space)}");
+            }
+        }
 
     }
 }
