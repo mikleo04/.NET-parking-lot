@@ -85,5 +85,26 @@ namespace parking_lot.service
                 Console.WriteLine("There is no space in parking lot");
             }
         }
+        
+        public void VehicleTypeReport(string typeVehicle)
+        {
+            int countMotorcycle = 0;
+            int countCar = 0;
+            foreach (ParkingSpace parkingSpace in _parkingLot)
+            {
+                if (parkingSpace.Status == SpaceStatus.Filled)
+                {
+                    if (parkingSpace.Vehicle.Type == TypeVehicle.Mobil)
+                    {
+                        countCar++;
+                    }
+                    else
+                    {
+                        countMotorcycle++;
+                    }
+                }
+            }
+            Console.WriteLine(typeVehicle == "Motor" ? $"{countMotorcycle}" : $"{countCar}");
+        }
     }
 }

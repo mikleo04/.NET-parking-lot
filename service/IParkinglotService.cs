@@ -10,5 +10,6 @@ namespace parking_lot.service
         void LeaveVehicle(int space);
         void FilledSpaceReport();
         void EmptySpaceReport();
+        void VehicleTypeReport(string typeVehicle);
     }
 }
