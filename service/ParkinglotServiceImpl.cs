@@ -42,5 +42,27 @@ namespace parking_lot.service
             parkingSpace.Vehicle = null;
             Console.WriteLine($"Slot number {space} is free");
         }
+        
+        public void FilledSpaceReport()
+        {
+            bool empty = true;
+            Console.WriteLine("Slot\tN0.\t \tType\tRegistration No Color");
+            foreach (ParkingSpace parkingSpace in _parkingLot)
+            {
+                if (parkingSpace.Status == SpaceStatus.Filled)
+                {
+                    Console.Write(parkingSpace.SpaceNumber);
+                    Console.Write($"\t{parkingSpace.Vehicle.LicencePlate}");
+                    Console.Write($"\t{parkingSpace.Vehicle.Type}");
+                    Console.WriteLine($"\t{parkingSpace.Vehicle.Color}");
+                    empty = false;
+                }
+            }
+
+            if (empty)
+            {
+                Console.WriteLine("All space is empty");
+            }
+        }
     }
 }

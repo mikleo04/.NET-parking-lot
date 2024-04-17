@@ -8,5 +8,6 @@ namespace parking_lot.service
         void CreateParkingLot(int space);
         void ParkVehicle(Vehicle vehicle);
         void LeaveVehicle(int space);
+        void FilledSpaceReport();
     }
 }
