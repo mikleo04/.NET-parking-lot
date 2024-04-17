@@ -13,5 +13,6 @@ namespace parking_lot.service
         void VehicleTypeReport(string typeVehicle);
         void LicencePlateTypeReport(string typePlate);
         void ColorTypeReport(string color, string type);
+        void FindSpace(string licencePlate);
     }
 }

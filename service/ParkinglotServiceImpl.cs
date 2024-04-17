@@ -160,6 +160,22 @@ namespace parking_lot.service
                     : $"{string.Join(", ", space)}");
             }
         }
+        
+        public void FindSpace(string licencePlate)
+        {
+            foreach (ParkingSpace parkingSpace in _parkingLot)
+            {
+                if (parkingSpace.Status == SpaceStatus.Filled)
+                {
+                    if (parkingSpace.Vehicle.LicencePlate.Equals(licencePlate))
+                    {
+                        Console.WriteLine($"space {parkingSpace.SpaceNumber}");
+                        return;
+                    }
+                }
+            }
+            Console.WriteLine("Not Found");
+        }
 
     }
 }
